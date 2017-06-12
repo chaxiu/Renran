@@ -13,7 +13,7 @@
 
   - 桌面小组件
   
-  - 支持中英双语
+  - 支持中英双语
 
 ### 即将带来的功能
 
@@ -31,10 +31,10 @@
 
 
 ### 存在的问题
-
-  - appwidget 无法及时更新
   
-  - 英语很渣翻译不是很好
+  - appwidget 无法及时更新
+  
+  - 英语很渣翻译不是很好
   
   - 适配有问题
 
@@ -49,6 +49,10 @@
 [CircleImageView](https://github.com/hdodenhof/CircleImageView)
 
 [Realm](https://github.com/realm/realm-java)
+
+### 联系我
+
+Eamil: zlogo913@gmail.com
 
 ### License
 
