@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+/src/main/java/com/aidchow/renran/weiboauth/Constans.kt
+/app-release.apk

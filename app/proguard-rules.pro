@@ -70,3 +70,5 @@
     **[] $VALUES;
     public *;
 }
+
+-keep class com.sina.weibo.sdk.** { *; }

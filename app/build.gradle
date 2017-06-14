@@ -3,16 +3,29 @@ apply plugin: 'kotlin-android'
 apply plugin: 'realm-android'
 apply plugin: 'kotlin-android-extensions'
 android {
+    signingConfigs {
+        config {
+            keyAlias 'aid'
+            keyPassword 'bsq520?BSQ'
+            storeFile file('/home/aidchow/AndroidStudioProjects/aidchow.jks')
+            storePassword 'bsq520?BSQ'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.aidchow.renran"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
     }
     buildTypes {
         release {
@@ -21,7 +34,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -30,6 +42,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.sina.weibo.sdk:core:2.0.3:openDefaultRelease@aar'
     compile 'com.wdullaer:materialdatetimepicker:3.2.2'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

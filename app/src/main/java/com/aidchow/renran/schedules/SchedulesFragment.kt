@@ -3,7 +3,6 @@ package com.aidchow.renran.schedules
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
@@ -17,6 +16,7 @@ import com.aidchow.renran.data.source.local.ScheduleLocalDataSource
 import com.aidchow.renran.sharescedule.ScheduleShareFragment
 import com.aidchow.renran.sharescedule.ShareSchedulePresenter
 import com.aidchow.renran.ui.appwidget.RenRanAppWidgetProvider
+import com.aidchow.renran.weiboauth.WeiboAuthActivity
 import kotlinx.android.synthetic.main.schedules_fragment.*
 
 /**
@@ -59,7 +59,9 @@ class SchedulesFragment : BaseFragment(), SchedulesContract.View, SchedulesAdapt
         adapter?.mShareButtonListener = this
         recycler_view_of_schedules.adapter = adapter
         tv_empty_tips.setOnClickListener { showAddNewScheduleUi() }
-        image_tool_bar_right.setOnClickListener { AlertDialog.Builder(context).setView(R.layout.about_dialog_layout).create().show() }
+        image_tool_bar_right.setOnClickListener {
+            startActivity(Intent(activity, WeiboAuthActivity::class.java))
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
